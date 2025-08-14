@@ -20,7 +20,6 @@ project:
     - "mem.v"
     - "mem_internal.v"
     - "mem_io.v"
-    - "../macros/sram22_512x8m8w1/sram22_512x8m8w1.v"
 
 # The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
 pinout:
