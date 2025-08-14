@@ -31,6 +31,29 @@
   "//": "https://tinytapeout.com/faq/#how-can-i-map-an-additional-external-clock-to-one-of-the-gpios",
   "CLOCK_PORT": "clk",
 
+  "MACROS": {
+    "sram22_512x8m8w1": {
+      "instances": {
+        "mem.mem_internal.sram_macro": {
+          "location": [50, 50],
+          "orientation": "S"
+        }
+      },
+      "gds": ["dir::../macros/sram22_512x8m8w1/sram22_512x8m8w1.gds"],
+      "lef": ["dir::../macros/sram22_512x8m8w1/sram22_512x8m8w1.lef"],
+      "nl": ["dir::../macros/sram22_512x8m8w1/sram22_512x8m8w1.v"],
+      "lib": {
+        "*_ff_n40C_1v95": ["dir::../macros/sram22_512x8m8w1/sram22_512x8m8w1_ff_n40C_1v95.lib"],
+        "*_ss_100C_1v60": ["dir::../macros/sram22_512x8m8w1/sram22_512x8m8w1_ss_100C_1v60.lib"],
+        "*_tt_025C_1v80": ["dir::../macros/sram22_512x8m8w1/sram22_512x8m8w1_tt_025C_1v80.lib"]
+      },
+      "spice": ["dir::../macros/sram22_512x8m8w1/sram22_512x8m8w1.spice"]
+    }
+  },
+
+  "PDN_MACRO_CONNECTIONS": ["mem.mem_internal.sram_macro VPWR VGND vdd vss"],
+  "FP_PDN_HORIZONTAL_LAYER": "met2",
+
   "//": "Configuration docs: https://openlane.readthedocs.io/en/latest/reference/configuration.html",
 
   "//": "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!",
