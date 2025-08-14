@@ -36,8 +36,6 @@ module spell_mem_internal (
 
   reg [1:0] cycles;
 
-  integer i;
-
   always @(posedge clk) begin
     if (~rst_n) begin
       cycles <= 0;
