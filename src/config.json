@@ -53,6 +53,7 @@
 
   "PDN_MACRO_CONNECTIONS": ["mem.mem_internal.sram_macro VPWR VGND vdd vss"],
   "FP_PDN_HORIZONTAL_LAYER": "met2",
+  "MAGIC_CAPTURE_ERRORS": false,
 
   "//": "Configuration docs: https://openlane.readthedocs.io/en/latest/reference/configuration.html",
 
