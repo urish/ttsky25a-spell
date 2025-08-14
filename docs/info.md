@@ -41,7 +41,7 @@ This design is an hardware implementation of SPELL with the following features:
 
 - 256 bytes of program memory (volatile, simulates EEPROM)
 - 32 bytes of stack memory
-- 32 bytes of data memory
+- 192 bytes of data memory
 - 8 bidirectional pins and up to 8 output-only pins
 
 Initially, all the program memory is filled with `0xFF`, and the stack and data memory are filled with `0x00`.
@@ -92,6 +92,7 @@ The data memory space is divided into two regions:
 |---------------|--------------------------------------------|
 | 0x00 - 0x1F   | General-purpose data storage (data memory) |
 | 0x20 - 0x5F   | I/O and control registers                  |
+| 0x60 - 0xFF   | Additional data memory                     |
 
 Other addresses are reserved for future use, and should not be accessed.
 
@@ -150,7 +151,3 @@ And of course, the obligatory blink, rapidly blinking an LED connected to the `u
 ## External hardware
 
 None
-
-## Errata
-
-When reseting the chip, bytes 0-3 and 128-131 of the program memory are not reset to `0xFF`, and retain their values from the last program loaded (or a random value on power-up). All other program memory bytes are reset to `0xFF`, as expected. This happens due to a timing issue with the DFFRAM write operation that affects the first word of each program memory bank.
